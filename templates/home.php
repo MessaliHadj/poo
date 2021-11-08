@@ -17,5 +17,14 @@
       <p><?= htmlspecialchars($article->createdAt) ?></p>
     </div>
   <?php endwhile ?>
+  <div>
+    <h2>Nouveau commentaire :</h2>
+    <form action="">
+      <input type="text" name="title" placeholder="Titre :">
+      <input type="text" name="content" placeholder="Contenu :">
+      <input type="text" name="author" placeholder="Pseudo :">
+      <input type="submit">
+    </form>
+  </div>
 </body>
 </html>

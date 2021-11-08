@@ -39,4 +39,15 @@ class ManagerRepository
     }
     return $result;
   }
+  
+  public function addQuery($sql, $parameters = null){
+    $result = $this->checkConnection()->prepare($sql);
+    $result->setFetchMode(PDO::FETCH_CLASS, static::class);
+    if ($parameters) {
+      $result->execute($parameters);
+    }else{
+      $result->execute();
+    }
+    return $result;
+  }
 }
